@@ -4,7 +4,6 @@ import (
 	"net/http"
 	"log"
 	"strings"
-	"fmt"
 	"database/sql"
 	"io/ioutil"
 	_ "github.com/mattn/go-sqlite3"
@@ -29,7 +28,6 @@ func endpoint(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		pageContent := string(content)
-		fmt.Println(pageContent)
 		postPage(page, pageContent)
 		w.Write([]byte(pageContent))
 	} else {
